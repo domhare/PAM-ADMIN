@@ -1,0 +1,43 @@
+@use "../utils/variables";
+
+// noUiSlider — replacement for ion.rangeSlider
+
+.noUi-target {
+    background: variables.$gray-200;
+    border: 0;
+    box-shadow: none;
+}
+
+.noUi-connect {
+    background: variables.$primary;
+}
+
+.noUi-horizontal {
+    height: 6px;
+}
+
+.noUi-horizontal .noUi-handle {
+    width: 18px;
+    height: 18px;
+    top: -7px;
+    right: -9px;
+    border-radius: 50%;
+    background: variables.$white;
+    border: 2px solid variables.$primary;
+    box-shadow: variables.$box-shadow-sm;
+}
+
+.noUi-handle:before,
+.noUi-handle:after {
+    display: none;
+}
+
+[data-theme="dark"] {
+    .noUi-target {
+        background: var(--border-color);
+    }
+
+    .noUi-horizontal .noUi-handle {
+        background: var(--white-color);
+    }
+}

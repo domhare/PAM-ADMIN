@@ -1,0 +1,69 @@
+@use "../utils/variables";
+
+// Quill — replacement for Summernote, styled to match the previous
+// rich-text-editor visual weight (see script.js's `.summernote` init).
+
+.ql-toolbar.ql-snow,
+.ql-container.ql-snow {
+    border-color: variables.$gray-200;
+    font-family: variables.$font-family-primary;
+}
+
+.ql-toolbar.ql-snow {
+    border-radius: 5px 5px 0 0;
+}
+
+.ql-container.ql-snow {
+    border-radius: 0 0 5px 5px;
+}
+
+.ql-editor {
+    min-height: 100px;
+    font-size: variables.$font-size-14;
+    color: variables.$gray-900;
+}
+
+.ql-snow .ql-picker {
+    color: variables.$gray-700;
+}
+
+[data-theme="dark"] {
+    .ql-toolbar.ql-snow,
+    .ql-container.ql-snow {
+        border-color: variables.$darkmode-gray-200;
+        background-color: var(--white-color);
+    }
+
+    .ql-editor {
+        color: variables.$darkmode-gray-900;
+    }
+
+    .ql-editor.ql-blank::before {
+        color: variables.$darkmode-gray-500;
+    }
+
+    .ql-snow .ql-picker {
+        color: variables.$darkmode-gray-500;
+    }
+
+    .ql-snow .ql-stroke {
+        stroke: variables.$darkmode-gray-500;
+    }
+
+    .ql-snow .ql-fill {
+        fill: variables.$darkmode-gray-500;
+    }
+
+    .ql-snow.ql-toolbar button:hover,
+    .ql-snow .ql-toolbar button:hover {
+        color: variables.$primary;
+
+        .ql-stroke {
+            stroke: variables.$primary;
+        }
+
+        .ql-fill {
+            fill: variables.$primary;
+        }
+    }
+}

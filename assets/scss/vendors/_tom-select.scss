@@ -1,0 +1,178 @@
+@use "../utils/mixins";
+@use "../utils/variables";
+
+// Tom Select — replacement for Select2, styled to match the previous
+// .select2-container visual spec (see _select2.scss).
+
+.ts-wrapper {
+    min-width: 100% !important;
+
+    &.form-control {
+        padding: 0 !important;
+        height: 40px !important;
+        background: transparent !important;
+        box-shadow: none !important;
+    }
+
+    .ts-control {
+        border: 1px solid var(--Stroke, rgba(145, 158, 171, 0.30));
+        @include mixins.rounded(5px);
+        color: variables.$gray-900;
+        font-size: variables.$font-size-14;
+        font-weight: variables.$font-weight-normal;
+        padding: 0 30px 0 10px !important;
+        box-shadow: none;
+        background-color: variables.$white;
+
+        img {
+            width: 20px;
+            height: 20px;
+            border-radius: 50px;
+            margin-right: 5px;
+        }
+    }
+
+    &.single {
+        .ts-control {
+            height: 40px;
+            line-height: 40px;
+            display: flex;
+            align-items: center;
+        }
+    }
+
+    &.multi {
+        .ts-control {
+            min-height: 40px;
+            height: auto;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 4px;
+            padding: 0 10px !important;
+
+            .item {
+                background-color: variables.$dark-transparent;
+                border-color: variables.$dark-transparent;
+                color: variables.$dark;
+                border-radius: 4px;
+                padding: 2px 8px;
+                font-size: variables.$font-size-12;
+                display: inline-flex;
+                align-items: center;
+                margin: 0;
+
+                .remove {
+                    margin: 0 5px;
+                    border-left: 0;
+                    padding: 0;
+                    font-size: 14px;
+                    line-height: 1;
+                    opacity: 0.8;
+
+                    &:hover {
+                        opacity: 1;
+                        background: transparent;
+                    }
+                }
+            }
+
+            input {
+                margin: 0 !important;
+                padding: 0 4px !important;
+                min-height: 26px !important;
+                height: 26px !important;
+                line-height: 26px !important;
+                font-size: variables.$font-size-13 !important;
+            }
+        }
+    }
+
+    &.plugin-clear_button {
+        .ts-control {
+            padding-right: 30px;
+        }
+        .clear-button {
+            opacity: 1;
+            color: variables.$gray-700;
+        }
+    }
+
+    &.focus .ts-control,
+    &.dropdown-active .ts-control {
+        border-color: variables.$primary;
+        box-shadow: none;
+    }
+
+    &.disabled .ts-control {
+        background-color: variables.$light;
+        opacity: 0.6;
+    }
+}
+
+.ts-dropdown {
+    z-index: 9999;
+    border-color: variables.$input-border;
+    box-shadow: variables.$box-shadow-sm;
+    font-size: variables.$font-size-14;
+
+    .option {
+        padding: 8px 10px;
+        color: variables.$text-color;
+
+        img {
+            width: 20px;
+            height: 20px;
+            border-radius: 50px;
+            margin-right: 5px;
+        }
+
+        &.active {
+            background-color: variables.$primary-100;
+            color: variables.$primary;
+        }
+
+        &[data-selected] {
+            background: variables.$primary;
+            color: variables.$white;
+        }
+    }
+}
+
+// Dark mode — mirrors _theme.scss's [data-theme="dark"] convention
+[data-theme="dark"] {
+    .ts-wrapper .ts-control {
+        background-color: var(--white-color);
+        border-color: var(--border-color);
+        color: variables.$darkmode-gray-900;
+    }
+
+    .ts-wrapper.multi .ts-control .item {
+        background-color: var(--border-color) !important;
+        border-color: var(--border-color) !important;
+        color: variables.$darkmode-gray-900 !important;
+    }
+
+    .ts-dropdown {
+        background-color: var(--white-color);
+        border-color: var(--border-color);
+        color: variables.$darkmode-gray-900;
+
+        .option {
+            color: variables.$darkmode-gray-500;
+
+            &.active {
+                background-color: variables.$darkmode-gray-200;
+                color: variables.$darkmode-gray-900;
+            }
+
+            &[data-selected] {
+                background: variables.$primary;
+                color: variables.$white;
+            }
+        }
+    }
+    .flatpickr-time input:hover, .flatpickr-time .flatpickr-am-pm:hover, .flatpickr-time input:focus, .flatpickr-time .flatpickr-am-pm:focus {
+         background-color: variables.$darkmode-gray-200;
+    }
+}

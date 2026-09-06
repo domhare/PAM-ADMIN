@@ -1,0 +1,19 @@
+# OS / editor cruft
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+.DS_Store
+*.swp
+.vscode/
+.idea/
+
+# Local env / secrets
+.env
+.env.*
+*.local
+
+# Build / dependency output
+node_modules/
+dist/
+build/
+*.log

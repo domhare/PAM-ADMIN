@@ -1,0 +1,49 @@
+.notification-chart {
+    margin-left: -96px;
+    position: relative;
+    top: 30px;
+}
+
+.tenent-chart{
+    .chart-stage-1{
+        width: 92px;
+        height: 92px;
+    }
+    .chart-stage-3{
+        width: 111px;
+        height: 111px;
+        right: 100px;
+        top: 56%;
+    }
+    .chart-stage-4 {
+    width: 57px;
+    height: 57px;
+    right: 53px;
+    bottom: 17px;
+}
+}
+
+@media (max-width:991.98px){
+.notification-chart {
+    margin-left: -143px;
+}
+.tenent-chart{
+.chart-stage-3{
+        right: 173px;
+    }
+.chart-stage-4{
+        right: 127px ;
+    }
+}
+}
+@media (max-width:425.98px){
+
+.tenent-chart{
+.chart-stage-3{
+        right: 121px;
+    }
+.chart-stage-4{
+        right: 75px ;
+    }
+}
+}

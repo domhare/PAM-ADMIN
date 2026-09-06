@@ -1,0 +1,71 @@
+@use "../utils/variables";
+
+.ticket-report-card {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    background: variables.$white;
+    margin-bottom: 24px;
+
+    .card-content {
+        border-radius: 20px;
+        box-shadow: none;
+        padding: 20px;
+        position: relative;
+    }
+
+    .ticket-report-card-icon {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: variables.$dark;
+        color: variables.$white;
+        font-size: 20px;
+        margin: 0 auto;
+        transition: all 0.5s ease-in-out;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        z-index: 10;
+        outline: 14px solid variables.$light;
+
+        &::before {
+            content: "";
+            width: 28px;
+            height: 34px;
+            border-radius: 23%;
+            box-shadow: 10px 10px 0 0 variables.$light;
+            position: absolute;
+            bottom: 59px;
+            right: -4px;
+            z-index: 1;
+            transform: rotate(20deg);
+        }
+
+        &::after {
+            content: "";
+            width: 23px;
+            height: 30px;
+            border-radius: 23%;
+            box-shadow: 10px 10px 0 0 variables.$light;
+            position: absolute;
+            right: 60px;
+            bottom: -2px;
+            z-index: 1;
+            transform: rotate(-19deg);
+        }
+    }
+}
+
+.select.select-disabled {
+    color: variables.$gray-200;
+    cursor: not-allowed;
+}
+
+/* Ticket report heatmap hover color */
+#ticket-report .apexcharts-heatmap-rect:hover {
+  fill: variables.$secondary !important;
+}

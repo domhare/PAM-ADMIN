@@ -1,0 +1,16 @@
+@use "../utils/variables";
+
+// SortableJS drag placeholder (replaces jQuery UI Sortable's default placeholder)
+
+.drag-placeholder {
+    opacity: 0.4;
+    background: variables.$gray-100;
+    border: 1px dashed variables.$gray-300;
+}
+
+[data-theme="dark"] {
+    .drag-placeholder {
+        background: variables.$darkmode-gray-200;
+        border-color: variables.$darkmode-gray-600;
+    }
+}
