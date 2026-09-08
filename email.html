@@ -1136,47 +1136,47 @@
 													alt="Img">
 											</a>
 											<div>
-												<h6 class="mb-1"><a href="javascript:void(0);">James Hong</a></h6>
-												<p>Jnh343@example.com</p>
+												<h6 class="mb-1"><a href="javascript:void(0);" id="mail-account-name">Postfach</a></h6>
+												<p id="mail-account-address">nicht verbunden</p>
 											</div>
 										</div>
 									</div>
 									<a href="javascript:void(0);" class="btn btn-primary w-100" id="compose_mail"><i
-											class="ti ti-edit me-2"></i>Compose</a>
+											class="ti ti-edit me-2"></i>Verfassen</a>
 									<div class="mt-4">
-										<h5 class="mb-2">Emails</h5>
+										<h5 class="mb-2">E-Mails</h5>
 										<div class="d-block mb-4 pb-4 border-bottom email-tags">
-											<a href="email.html"
+											<a href="javascript:void(0);" data-folder="inbox" data-label="Posteingang"
 												class="d-flex align-items-center justify-content-between p-2 rounded active">
 												<span class="d-flex align-items-center fw-medium"><i
-														class="ti ti-inbox text-gray me-2"></i>Inbox</span>
+														class="ti ti-inbox text-gray me-2"></i>Posteingang</span>
 												<span class="badge badge-danger rounded-pill badge-xs">56</span>
 											</a>
-											<a href="javascript:void(0);"
+											<a href="javascript:void(0);" data-folder="starred" data-label="Markiert"
 												class="d-flex align-items-center justify-content-between p-2 rounded">
 												<span class="d-flex align-items-center fw-medium"><i
-														class="ti ti-star text-gray me-2"></i>Starred</span>
+														class="ti ti-star text-gray me-2"></i>Markiert</span>
 												<span class="fw-semibold fs-12 badge text-gray rounded-pill">46</span>
 											</a>
-											<a href="javascript:void(0);"
+											<a href="javascript:void(0);" data-folder="sent" data-label="Gesendet"
 												class="d-flex align-items-center justify-content-between p-2 rounded">
 												<span class="d-flex align-items-center fw-medium"><i
-														class="ti ti-rocket text-gray me-2"></i>Sent</span>
+														class="ti ti-rocket text-gray me-2"></i>Gesendet</span>
 												<span class="badge text-gray rounded-pill">14</span>
 											</a>
-											<a href="javascript:void(0);"
+											<a href="javascript:void(0);" data-folder="drafts" data-label="Entwürfe"
 												class="d-flex align-items-center justify-content-between p-2 rounded">
 												<span class="d-flex align-items-center fw-medium"><i
-														class="ti ti-file text-gray me-2"></i>Drafts</span>
+														class="ti ti-file text-gray me-2"></i>Entwürfe</span>
 												<span class="badge text-gray rounded-pill">12</span>
 											</a>
-											<a href="javascript:void(0);"
+											<a href="javascript:void(0);" data-folder="trash" data-label="Papierkorb"
 												class="d-flex align-items-center justify-content-between p-2 rounded">
 												<span class="d-flex align-items-center fw-medium"><i
-														class="ti ti-trash text-gray me-2"></i>Deleted</span>
+														class="ti ti-trash text-gray me-2"></i>Papierkorb</span>
 												<span class="badge text-gray rounded-pill">08</span>
 											</a>
-											<a href="javascript:void(0);"
+											<a href="javascript:void(0);" data-folder="spam" data-label="Spam"
 												class="d-flex align-items-center justify-content-between p-2 rounded">
 												<span class="d-flex align-items-center fw-medium"><i
 														class="ti ti-info-octagon text-gray me-2"></i>Spam</span>
@@ -1322,11 +1322,11 @@
 								<div class="p-3">
 									<div class="d-flex align-items-center justify-content-between flex-wrap row-gap-3">
 										<div>
-											<h5 class="mb-1">Inbox</h5>
+											<h5 class="mb-1" id="mail-folder-title">Posteingang</h5>
 											<div class="d-flex align-items-center">
-												<span>2345 Emails</span>
+												<span id="mail-count-total">-</span>
 												<i class="ti ti-point-filled text-primary mx-1"></i>
-												<span>56 Unread</span>
+												<span id="mail-count-unread">-</span>
 											</div>
 										</div>
 										<div class="d-flex align-items-center">
@@ -1334,7 +1334,7 @@
 												<span class="input-icon-addon">
 													<i class="ti ti-search"></i>
 												</span>
-												<input type="text" class="form-control" placeholder="Search Email">
+												<input type="text" class="form-control" id="mail-search" placeholder="E-Mails durchsuchen">
 											</div>
 											<div class="d-flex align-items-center">
 												<a href="javascript:void(0);"
@@ -1343,7 +1343,7 @@
 												<a href="javascript:void(0);"
 													class="btn btn-icon btn-sm rounded-circle"><i
 														class="ti ti-settings"></i></a>
-												<a href="javascript:void(0);"
+												<a href="javascript:void(0);" id="mail-refresh"
 													class="btn btn-icon btn-sm rounded-circle"><i
 														class="ti ti-refresh"></i></a>
 											</div>
@@ -2127,11 +2127,34 @@
 		</div>
 		<!-- /Page Wrapper -->
 
+		<!-- Lesefenster -->
+		<div class="modal fade" id="mail-view-modal" tabindex="-1" aria-hidden="true">
+			<div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+				<div class="modal-content">
+					<div class="modal-header align-items-start">
+						<div class="pe-3">
+							<h5 class="modal-title mb-1" data-role="subject"></h5>
+							<p class="fs-13 text-gray mb-0" data-role="meta"></p>
+						</div>
+						<button type="button" class="btn-close custom-btn-close" data-bs-dismiss="modal"
+							aria-label="Schließen"><i class="ti ti-x"></i></button>
+					</div>
+					<div class="modal-body" data-role="body"></div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-light" data-bs-dismiss="modal">Schließen</button>
+						<button type="button" class="btn btn-primary" data-role="reply">
+							<i class="ti ti-corner-up-left me-1"></i>Antworten</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- /Lesefenster -->
+
 		<!-- Compose Mail -->
 		<div id="compose-view">
 			<div class="bg-white border-0 rounded compose-view">
 				<div class="compose-header d-flex align-items-center justify-content-between bg-dark p-3">
-					<h5 class="text-white">Compose New Email</h5>
+					<h5 class="text-white">Neue E-Mail</h5>
 					<div class="d-flex align-items-center">
 						<a href="javascript:void(0);" class="d-inline-flex me-2 text-white fs-16"><i
 								class="ti ti-minus"></i></a>
@@ -2144,45 +2167,33 @@
 						</button>
 					</div>
 				</div>
-				<form action="email.html">
+				<form id="compose-form" novalidate>
+					<input type="hidden" data-field="inReplyTo" value="">
 					<div class="p-3 position-relative pb-2 border-bottom">
-						<div class="tag-with-img d-flex align-items-center">
-							<label class="form-label me-2">To</label>
-							<input class="input-tags form-control border-0 h-100" id="inputBox" type="text"
-								data-role="tagsinput" name="Label" value="Angela Thomas">
+						<div class="d-flex align-items-center mb-2">
+							<label class="form-label me-2 mb-0" for="compose-to">An</label>
+							<input class="form-control border-0 h-100" id="compose-to" data-field="to" type="text"
+								placeholder="empfaenger@example.de" autocomplete="off">
 						</div>
-						<div class="d-flex align-items-center email-cc">
-							<a href="javascript:void(0);" class="d-inline-flex me-2">Cc</a>
-							<a href="javascript:void(0);" class="d-inline-flex">Bcc</a>
+						<div class="d-flex align-items-center">
+							<label class="form-label me-2 mb-0" for="compose-cc">Cc</label>
+							<input class="form-control border-0 h-100" id="compose-cc" data-field="cc" type="text"
+								placeholder="optional" autocomplete="off">
 						</div>
 					</div>
 					<div class="p-3 border-bottom">
 						<div class="mb-3">
-							<input type="text" class="form-control" placeholder="Subject">
+							<input type="text" class="form-control" data-field="subject" placeholder="Betreff">
 						</div>
 						<div class="mb-0">
-							<textarea rows="7" class="form-control" placeholder="Compose Email"></textarea>
+							<textarea rows="7" class="form-control" data-field="text"
+								placeholder="Nachricht schreiben ..."></textarea>
 						</div>
 					</div>
 					<div class="p-3 d-flex align-items-center justify-content-between">
-						<div class="d-flex align-items-center">
-							<a href="javascript:void(0);" class="btn btn-icon btn-sm rounded-circle"><i
-									class="ti ti-paperclip"></i></a>
-							<a href="javascript:void(0);" class="btn btn-icon btn-sm rounded-circle"><i
-									class="ti ti-photo"></i></a>
-							<a href="javascript:void(0);" class="btn btn-icon btn-sm rounded-circle"><i
-									class="ti ti-link"></i></a>
-							<a href="javascript:void(0);" class="btn btn-icon btn-sm rounded-circle"><i
-									class="ti ti-pencil"></i></a>
-							<a href="javascript:void(0);" class="btn btn-icon btn-sm rounded-circle"><i
-									class="ti ti-mood-smile"></i></a>
-						</div>
-						<div class="d-flex align-items-center compose-footer">
-							<a href="javascript:void(0);" class="btn btn-icon btn-sm rounded-circle"><i
-									class="ti ti-calendar-repeat"></i></a>
-							<a href="javascript:void(0);" class="btn btn-icon btn-sm rounded-circle"><i
-									class="ti ti-trash"></i></a>
-							<button type="submit" class="btn btn-primary d-inline-flex align-items-center ms-2">Send <i
+						<div class="d-flex align-items-center compose-footer w-100">
+							<span class="fs-13 me-auto text-gray" data-role="status"></span>
+							<button type="submit" class="btn btn-primary d-inline-flex align-items-center ms-2">Senden <i
 									class="ti ti-arrow-right ms-2"></i></button>
 						</div>
 					</div>
@@ -2212,6 +2223,9 @@
 	<script src="assets/plugins/flatpickr/flatpickr.min.js"></script>
 	<script src="assets/plugins/tom-select/tom-select.complete.min.js"></script>
 	<script src="assets/js/script.js"></script>
+
+	<!-- Anbindung an das Postfach (api/) -->
+	<script src="assets/js/email-live.js"></script>
 
 </body>
 
