@@ -7,7 +7,7 @@ Static admin dashboard front-end built on the **SmartHR** Bootstrap 5 admin temp
 | File | Purpose |
 | --- | --- |
 | `index.html` | Main dashboard |
-| `chat.html` | Chat / messaging |
+| `chat.html` | Chat / messaging — live WhatsApp when the bridge is running |
 | `email.html` | Email client |
 | `calendar.html` | Calendar (FullCalendar) |
 | `invoice.html` | Invoice view |
@@ -27,6 +27,8 @@ assets/
   img/       Images and SVG artwork
   plugins/   Third-party libraries (ApexCharts, Chart.js, FullCalendar, Quill, Swiper, SweetAlert2, ...)
   html/      Additional SmartHR template pages, not referenced by the pages above
+  js/wa/     WhatsApp bridge client for chat.html
+server/      Node service that links WhatsApp and feeds chat.html
 ```
 
 ## Running locally
@@ -38,6 +40,21 @@ python -m http.server 8000
 ```
 
 Then visit http://localhost:8000.
+
+## WhatsApp
+
+`chat.html` shows your real WhatsApp conversations when the bridge in
+[`server/`](server/README.md) is running. It links a personal account by QR code,
+so you get existing chats, history, groups and media — send and receive, reply,
+react, forward, star, media and voice notes, search, archive/pin/mute, and live
+delivery receipts.
+
+```bash
+cd server && npm install && npm start
+```
+
+Then open `chat.html` and scan the QR code. Full setup and API reference:
+[`server/README.md`](server/README.md).
 
 Editing styles requires compiling `assets/scss/` to `assets/css/style.css` with any Sass compiler.
 

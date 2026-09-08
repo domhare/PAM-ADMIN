@@ -1,0 +1,25 @@
+{
+  "name": "pam-admin-whatsapp-bridge",
+  "version": "1.0.0",
+  "private": true,
+  "description": "WhatsApp bridge for the PAM-ADMIN chat.html page",
+  "type": "commonjs",
+  "main": "index.js",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node --watch index.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "mime-types": "^2.1.35",
+    "multer": "^1.4.5-lts.1",
+    "qrcode": "^1.5.4",
+    "socket.io": "^4.7.5",
+    "whatsapp-web.js": "^1.26.0"
+  }
+}
