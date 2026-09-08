@@ -199,14 +199,14 @@ html:not([dir=rtl]) .datepicker table tr td.range-end:not(.range-start) {
   border-top-right-radius: 0 !important;
 }
 .datepicker table tr td.selected, .datepicker table tr td.selected:hover, .datepicker table tr td.selected.highlighted {
-    background: #f26522 !important;
+    background: #005ca9 !important;
     color: #fff;
 }
 .datepicker table tr td.selected, .datepicker table tr td.selected:hover, .datepicker table tr td.range.day {
     background: #eeee;
 }
 .datepicker-days .active {
-    background: #f26522;
+    background: #005ca9;
     color: #fff;
 }
 

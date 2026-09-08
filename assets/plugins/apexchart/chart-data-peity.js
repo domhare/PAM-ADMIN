@@ -56,13 +56,13 @@
 	}
 
 	// Ticket charts (bar)
-	sparkline('.ticket-chart-1', 'bar', { fill: ['#F26522'], height: 70 });
+	sparkline('.ticket-chart-1', 'bar', { fill: ['#005CA9'], height: 70 });
 	sparkline('.ticket-chart-2', 'bar', { fill: ['#AB47BC'], height: 70 });
 	sparkline('.ticket-chart-3', 'bar', { fill: ['#03C95A'], height: 70 });
 	sparkline('.ticket-chart-4', 'bar', { fill: ['#0DCAF0'], height: 70 });
 
 	// Subscription lines
-	sparkline('.subscription-line-1', 'line', { fill: ['#F7A37A'], height: 35 });
+	sparkline('.subscription-line-1', 'line', { fill: ['#669DCB'], height: 35 });
 	sparkline('.subscription-line-2', 'line', { fill: ['#70B1FF'], height: 25 });
 	sparkline('.subscription-line-3', 'line', { fill: ['#60DD97'], height: 25 });
 	sparkline('.subscription-line-4', 'line', { fill: ['#DE5555'], height: 25 });
@@ -72,7 +72,7 @@
 	sparkline('.country-chart-2', 'line', { fill: ['#D00C0C'], height: 20 });
 
 	// Company bars
-	sparkline('.company-bar1', 'bar', { fill: ['#FF6F28'], height: 40, width: 40 });
+	sparkline('.company-bar1', 'bar', { fill: ['#0C64AD'], height: 40, width: 40 });
 	sparkline('.company-bar2', 'bar', { fill: ['#4B3088'], height: 40, width: 40 });
 	sparkline('.company-bar3', 'bar', { fill: ['#177DBC'], height: 40, width: 40 });
 	sparkline('.company-bar4', 'bar', { fill: ['#2DCB73'], height: 40, width: 40 });

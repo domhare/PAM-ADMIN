@@ -158,7 +158,7 @@ document.addEventListener('DOMContentLoaded', function () {
           show: false,
         }
       },
-      colors: ['#F26522'],
+      colors: ['#005CA9'],
       dataLabels: {
         enabled: false
       },
@@ -203,7 +203,7 @@ document.addEventListener('DOMContentLoaded', function () {
           show: false,
         }
       },
-      colors: ['#F26522', '#888ea8'],
+      colors: ['#005CA9', '#888ea8'],
       dataLabels: {
         enabled: false
       },
@@ -254,7 +254,7 @@ document.addEventListener('DOMContentLoaded', function () {
           endingShape: 'rounded'
         },
       },
-      colors: ['#F26522', '#4361ee'],
+      colors: ['#005CA9', '#4361ee'],
       dataLabels: {
         enabled: false
       },
@@ -326,7 +326,7 @@ document.addEventListener('DOMContentLoaded', function () {
           horizontal: false,
         },
       },
-      colors: ['#F26522', '#E70D0D', '#03C95A', '#1B84FF'],
+      colors: ['#005CA9', '#E70D0D', '#03C95A', '#1B84FF'],
       series: [{
         name: 'PRODUCT A',
         data: [44, 55, 41, 67, 22, 43]
@@ -371,7 +371,7 @@ document.addEventListener('DOMContentLoaded', function () {
           show: false,
         }
       },
-      colors: ['#F26522'],
+      colors: ['#005CA9'],
       plotOptions: {
         bar: {
           horizontal: true,
@@ -406,7 +406,7 @@ document.addEventListener('DOMContentLoaded', function () {
           show: false,
         }
       },
-      colors: ['#F26522', '#888ea8'],
+      colors: ['#005CA9', '#888ea8'],
       series: [{
         name: 'Website Blog',
         type: 'column',
@@ -796,7 +796,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
       },
       series: [15, 10, 5, 10, 60],
-      colors: ['#F26522', '#FFC107', '#E70D0D', '#03C95A', '#0C4B5E'],
+      colors: ['#005CA9', '#FFC107', '#E70D0D', '#03C95A', '#0C4B5E'],
       responsive: [{
         breakpoint: 480,
         options: {
@@ -848,7 +848,7 @@ document.addEventListener('DOMContentLoaded', function () {
         height: 200,
       },
       labels: ['Database', 'Images', 'Videos', 'Documents', 'Audio'],
-      colors: ['#FFC107', '#00C2FF', '#0D3C4A', '#1B84FF', '#F26522'],
+      colors: ['#FFC107', '#00C2FF', '#0D3C4A', '#1B84FF', '#005CA9'],
       plotOptions: {
         pie: {
           donut: {
@@ -1491,7 +1491,7 @@ if (document.getElementById('total-chart')) {
     },
     markers: {
       size: 0,
-      colors: ["#F26522"],
+      colors: ["#005CA9"],
       strokeColors: "#fff",
       strokeWidth: 2,
       hover: {
@@ -1513,7 +1513,7 @@ if (document.getElementById('total-chart')) {
       width: 2.5,
       curve: "smooth"
     },
-    colors: ["#F26522"],
+    colors: ["#005CA9"],
     xaxis: {
       categories: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep"]
     },
@@ -1582,7 +1582,7 @@ if (document.getElementById('active-chart')) {
     },
     markers: {
       size: 0,
-      colors: ["#F26522"],
+      colors: ["#005CA9"],
       strokeColors: "#fff",
       strokeWidth: 2,
       hover: {
@@ -1604,7 +1604,7 @@ if (document.getElementById('active-chart')) {
       width: 2.5,
       curve: "smooth"
     },
-    colors: ["#F26522"],
+    colors: ["#005CA9"],
     xaxis: {
       categories: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep"]
     },
@@ -1673,7 +1673,7 @@ if (document.getElementById('inactive-chart')) {
     },
     markers: {
       size: 0,
-      colors: ["#F26522"],
+      colors: ["#005CA9"],
       strokeColors: "#fff",
       strokeWidth: 2,
       hover: {
@@ -1695,7 +1695,7 @@ if (document.getElementById('inactive-chart')) {
       width: 2.5,
       curve: "smooth"
     },
-    colors: ["#F26522"],
+    colors: ["#005CA9"],
     xaxis: {
       categories: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep"]
     },
@@ -1764,7 +1764,7 @@ if (document.getElementById('location-chart')) {
     },
     markers: {
       size: 0,
-      colors: ["#F26522"],
+      colors: ["#005CA9"],
       strokeColors: "#fff",
       strokeWidth: 2,
       hover: {
@@ -1786,7 +1786,7 @@ if (document.getElementById('location-chart')) {
       width: 2.5,
       curve: "smooth"
     },
-    colors: ["#F26522"],
+    colors: ["#005CA9"],
     xaxis: {
       categories: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep"]
     },
@@ -2365,7 +2365,7 @@ if (document.getElementById('leave-report')) {
     legend: {
       show: false
     },
-    colors: ['#03C95A', '#FFC107', '#0C4B5E', '#F26522'], // Set your colors here
+    colors: ['#03C95A', '#FFC107', '#0C4B5E', '#005CA9'], // Set your colors here
     dataLabels: {
       enabled: false // Disable data labels
     }
@@ -2487,7 +2487,7 @@ if (document.getElementById('emp-department')) {
         show: false,
       }
     },
-    colors: ['#FF6F28'],
+    colors: ['#0C64AD'],
     grid: {
       borderColor: '#E5E7EB',
       strokeDashArray: 5,
@@ -2565,7 +2565,7 @@ if (document.getElementById('company-chart')) {
           backgroundBarOpacity: 0.5,
           hover: {
             enabled: true,
-            borderColor: '#F26522', // Color when hovering over the bar
+            borderColor: '#005CA9', // Color when hovering over the bar
           }
         }
       },
@@ -2627,7 +2627,7 @@ if (document.getElementById('plan-overview')) {
         show: false,
       }
     },
-    colors: ['#FFC107', '#1B84FF', '#F26522'],
+    colors: ['#FFC107', '#1B84FF', '#005CA9'],
     series: [20, 60, 20],
     labels: ['Enterprise', 'Premium', 'Basic'],
     plotOptions: {
@@ -2681,7 +2681,7 @@ if (document.getElementById('sales-income')) {
       stacked: true,
       toolbar: { show: false }
     },
-    colors: ['#FF6F28', '#F8F9FA'],
+    colors: ['#0C64AD', '#F8F9FA'],
     plotOptions: {
       bar: {
         columnWidth: '60%',       // Adjust for a cleaner pill-shape look
@@ -2835,7 +2835,7 @@ if (document.getElementById('deals_stage')) {
         show: false,
       }
     },
-    colors: ['#FF6F28', '#F8F9FA'],
+    colors: ['#0C64AD', '#F8F9FA'],
     responsive: [{
       breakpoint: 480,
       options: {
@@ -2905,7 +2905,7 @@ if (document.getElementById('top_deal_chart')) {
     series: [{
       name: 'Series 1',
       data: [80, 50, 30, 40, 100, 20],
-      color: '#F37438',
+      color: '#196CB1',
 
     }, {
       name: 'Series 2',
@@ -2979,7 +2979,7 @@ if (document.getElementById('pipeline_chart')) {
         isFunnel: true,
       },
     },
-    colors: ['#F26522', '#F37438', '#F5844E', '#F69364', '#F7A37A', '#F9B291'],
+    colors: ['#005CA9', '#196CB1', '#337DBA', '#4C8DC3', '#669DCB', '#80AED4'],
     dataLabels: {
       enabled: true,
       textAnchor: 'middle',
@@ -3033,7 +3033,7 @@ if (document.getElementById('leads_stage')) {
         show: false,
       }
     },
-    colors: ['#FF6F28', '#F8F9FA'],
+    colors: ['#0C64AD', '#F8F9FA'],
     responsive: [{
       breakpoint: 480,
       options: {
@@ -3156,7 +3156,7 @@ if (document.getElementById('donut-chart-3')) {
       height: 290,
     },
     labels: ['Paid', 'Google', 'Referals', 'Campaigns', 'Campaigns'], // Labels for the data
-    colors: ['#F26522', '#FFC107', '#E70D0D', '#1B84FF', '#0C4B5E'], // Colors from the image
+    colors: ['#005CA9', '#FFC107', '#E70D0D', '#1B84FF', '#0C4B5E'], // Colors from the image
     plotOptions: {
       pie: {
         donut: {
@@ -3200,7 +3200,7 @@ if (document.getElementById('revenue-income')) {
       toolbar: { show: false }
     },
     // STEP 1: Define your gradient-step colors here
-    colors: ['#f26522', '#0c4b5e', '#1b84ff', '#F8F9FA'], 
+    colors: ['#005ca9', '#0c4b5e', '#1b84ff', '#F8F9FA'], 
     
     plotOptions: {
       bar: {
@@ -3280,11 +3280,11 @@ if (document.getElementById('heat_chart')) {
     },
     colors: [
       "#9CA3AF",
-      "#F37438",
+      "#196CB1",
       "#9CA3AF",
-      "#F37438",
+      "#196CB1",
       "#9CA3AF",
-      "#F37438",
+      "#196CB1",
     ],
     series: [
       {
@@ -3586,7 +3586,7 @@ if (document.getElementById('status-chart')) {
         barHeight: '100%',
       }
     },
-    colors: ['#F26522', '#0C4B5E', '#F8F9FA'],
+    colors: ['#005CA9', '#0C4B5E', '#F8F9FA'],
     fill: {
       type: 'pattern',
       opacity: 1,
@@ -3664,7 +3664,7 @@ if (document.getElementById('employee-distribution')) {
           backgroundBarRadius: 10,
           hover: {
             enabled: true,
-            borderColor: '#f2652247', // Color when hovering over the bar
+            borderColor: '#005ca947', // Color when hovering over the bar
           }
         }
       },
@@ -3753,7 +3753,7 @@ if (document.getElementById('payroll-chart')) {
           backgroundBarRadius: 4,
           hover: {
             enabled: true,
-            borderColor: '#F26522', // Color when hovering over the bar
+            borderColor: '#005CA9', // Color when hovering over the bar
           }
         }
       },
@@ -3792,7 +3792,7 @@ if (document.getElementById('deduction-chart')) {
       // The mirror values for the left side (negative)
       data: [-15, -40, -30, -35, -40, -35, -32]
     }],
-    colors: ['#F26522'],
+    colors: ['#005CA9'],
     plotOptions: {
       bar: {
         borderRadius: 4,
@@ -3848,7 +3848,7 @@ if (document.getElementById('attendance-chart')) {
     },
 
     // 3. Colors (Orange, Dark Teal, Yellow)
-    colors: ['#F26522', '#004C6D', '#FFC700'],
+    colors: ['#005CA9', '#004C6D', '#FFC700'],
 
     // 4. Plot Options (Controls the 'boxes' look and spacing)
     plotOptions: {
@@ -3957,7 +3957,7 @@ if (document.getElementById('leave-chart')) {
 
     fill: {
       // Manually define the colors to match your image
-      colors: ['#F37438', '#F5844E', '#F69364']
+      colors: ['#196CB1', '#337DBA', '#4C8DC3']
     },
 
     // Add labels or tooltips if you want to show "Present", "Absent", "Late" names
@@ -4011,7 +4011,7 @@ if (document.getElementById('insurence-chart')) {
       name: 'Negative',
       data: [-15, -40, -30, -35, -40, -35, -32]
     }],
-    colors: ['#F26522'], // Your orange color
+    colors: ['#005CA9'], // Your orange color
     grid: { show: false },
     xaxis: { labels: { show: false } },
     yaxis: {
@@ -4139,7 +4139,7 @@ if (document.getElementById('enroll-course')) {
       }
     },
 
-    colors: ['#F26522'], // Orange bar color
+    colors: ['#005CA9'], // Orange bar color
 
     dataLabels: {
       enabled: false
@@ -4212,7 +4212,7 @@ if (document.getElementById('certification-chart')) {
     stroke: {
       curve: 'smooth',
       width: 4,
-      colors: ['#F26522']
+      colors: ['#005CA9']
     },
 
     fill: {
@@ -4225,7 +4225,7 @@ if (document.getElementById('certification-chart')) {
         colorStops: [
           {
             offset: 0,
-            color: '#F26522',
+            color: '#005CA9',
             opacity: 0.45
           },
           {
@@ -4404,7 +4404,7 @@ if (document.getElementById('distribution-chart')) {
       },
     },
     // CHANGED: Second color is now Blue (#007BFF), others are light blue/grey
-    colors: ['#E5E7EB', '#f26522', '#E5E7EB', '#E5E7EB', '#E5E7EB', '#E5E7EB', '#E5E7EB', '#E5E7EB', '#E5E7EB', '#E5E7EB', '#E5E7EB'],
+    colors: ['#E5E7EB', '#005ca9', '#E5E7EB', '#E5E7EB', '#E5E7EB', '#E5E7EB', '#E5E7EB', '#E5E7EB', '#E5E7EB', '#E5E7EB', '#E5E7EB'],
     
     dataLabels: { enabled: false },
     series: [{
@@ -4575,7 +4575,7 @@ if (document.getElementById('process-chart')) {
       { name: 'Gap 2', data: [5] },
       { name: 'Wed', data: [25] }
     ],
-    colors: ['#F26522', 'transparent', '#0D4F5E', 'transparent', '#1F2937'],
+    colors: ['#005CA9', 'transparent', '#0D4F5E', 'transparent', '#1F2937'],
     grid: {
       show: true,
       borderColor: '#E5E7EB',
@@ -4654,7 +4654,7 @@ if (document.getElementById('arrival-chart-1')) {
     }],
     // First 3 bars get the brand color, last 2 get light background
     colors: [
-      '#F26522', '#F26522', '#F26522', '#F26522', '#F26522', '#F26522', // First 3 (Filled)
+      '#005CA9', '#005CA9', '#005CA9', '#005CA9', '#005CA9', '#005CA9', // First 3 (Filled)
       '#F1F1F1', '#F1F1F1'              // Last 2 (Light Bg)
     ],
     grid: {
@@ -4711,7 +4711,7 @@ if (document.getElementById('arrival-chart-2')) {
     }],
     // First 3 bars get the brand color, last 2 get light background
     colors: [
-      '#F26522', '#F26522', '#F26522', '#F26522', '#F26522', // First 3 (Filled)
+      '#005CA9', '#005CA9', '#005CA9', '#005CA9', '#005CA9', // First 3 (Filled)
       '#F1F1F1', '#F1F1F1', '#F1F1F1'              // Last 2 (Light Bg)
     ],
     grid: {
@@ -4768,7 +4768,7 @@ if (document.getElementById('arrival-chart-3')) {
     }],
     // First 3 bars get the brand color, last 2 get light background
     colors: [
-      '#F26522', '#F26522', '#F26522', '#F26522', // First 3 (Filled)
+      '#005CA9', '#005CA9', '#005CA9', '#005CA9', // First 3 (Filled)
       '#F1F1F1', '#F1F1F1', '#F1F1F1', '#F1F1F1'              // Last 2 (Light Bg)
     ],
     grid: {
@@ -4825,7 +4825,7 @@ if (document.getElementById('arrival-chart-4')) {
     }],
     // First 3 bars get the brand color, last 2 get light background
     colors: [
-      '#F26522', '#F26522', '#F26522', // First 3 (Filled)
+      '#005CA9', '#005CA9', '#005CA9', // First 3 (Filled)
       '#F1F1F1', '#F1F1F1', '#F1F1F1', '#F1F1F1', '#F1F1F1' // Last 2 (Light Bg)
     ],
     grid: {
@@ -4885,7 +4885,7 @@ if (document.getElementById('mfa-chart')) {
     colors: [
       ({ dataPointIndex }) =>
         dataPointIndex < filledBlocks
-          ? '#F26522' // Active Orange
+          ? '#005CA9' // Active Orange
           : '#E5E7EB' // Inactive Gray
     ],
 
@@ -5143,7 +5143,7 @@ if (document.getElementById('logactivity-chart')) {
       sparkline: { enabled: false },
       zoom: { enabled: false }
     },
-    colors: ['#F26522'],
+    colors: ['#005CA9'],
     stroke: {
       show: true,
       curve: 'straight',
@@ -5224,7 +5224,7 @@ if (document.getElementById('logactivity-chart')) {
 // Storage chart IT Dashboard
 if (document.getElementById('storages-chart')) {
   var sColStacked = {
-    colors: ['#0C4B5E', '#0C4B5E', '#F26522', '#0C4B5E', '#0C4B5E', '#0C4B5E'],
+    colors: ['#0C4B5E', '#0C4B5E', '#005CA9', '#0C4B5E', '#0C4B5E', '#0C4B5E'],
     chart: {
       height: 264,
       type: 'bar',
@@ -5344,7 +5344,7 @@ if (document.getElementById('api-chart')) {
       name: 'Negative',
       data: [-15, -40, -30, -35, -40, -35, -32]
     }],
-    colors: ['#F26522'], // Your orange color
+    colors: ['#005CA9'], // Your orange color
     grid: { show: false },
     xaxis: { labels: { show: false } },
     yaxis: {
@@ -5390,7 +5390,7 @@ if (document.getElementById('tickets-chart')) {
       name: 'Negative',
       data: [-60, -0, -60, -0, -60, -0, -60]
     }],
-    colors: ['#F26522'], // Your orange color
+    colors: ['#005CA9'], // Your orange color
     grid: { show: false },
     xaxis: { labels: { show: false } },
     yaxis: {
@@ -5439,7 +5439,7 @@ if (document.getElementById('jobs-chart')) {
     // The first color is 'inactive', the 6th color (index 5) is 'active'
     colors: [
       '#E9ECEF', '#E9ECEF', '#E9ECEF', '#E9ECEF', '#E9ECEF',
-      '#F26522', // This is your active orange bar
+      '#005CA9', // This is your active orange bar
       '#E9ECEF', '#E9ECEF', '#E9ECEF', '#E9ECEF', '#E9ECEF'
     ],
     grid: { show: false },
@@ -5569,9 +5569,9 @@ if (document.getElementById('attendancetrend-chart')) {
                       { offset: 0, color: "#F4CACB", opacity: 1 },
                       { offset: 100, color: "#FDE0D3", opacity: 1 }
                   ],
-                  [ // INDEX 5: JUNE GRADIENT (Figma: #E70D0D to #F26522)
+                  [ // INDEX 5: JUNE GRADIENT (Figma: #E70D0D to #005CA9)
                       { offset: 0, color: "#E70D0D", opacity: 1 },
-                      { offset: 100, color: "#F26522", opacity: 1 }
+                      { offset: 100, color: "#005CA9", opacity: 1 }
                   ],
                   [
                       { offset: 0, color: "#F4CACB", opacity: 1 },
@@ -5709,7 +5709,7 @@ if (document.getElementById('violation-chart')) {
         opacityTo: 1,
         stops: [0, 100],
         colorStops: [
-          [{ offset: 0, color: '#F37438', opacity: 1 }, { offset: 100, color: '#FF5504', opacity: 1 }],
+          [{ offset: 0, color: '#196CB1', opacity: 1 }, { offset: 100, color: '#FF5504', opacity: 1 }],
           [{ offset: 0, color: '#0C4B5E', opacity: 1 }, { offset: 100, color: '#47BCB2', opacity: 1 }],
           [{ offset: 0, color: '#2DA17C', opacity: 1 }, { offset: 100, color: '#EFCE6B', opacity: 1 }]
         ]
@@ -5772,7 +5772,7 @@ if (document.getElementById('violation-chart')) {
 if (document.getElementById('office-chart')) {
   var options = {
     // 1. COLORS: Matches the Orange and Dark Teal from your screenshot
-    colors: ['#0C4B5E', '#F26522'], 
+    colors: ['#0C4B5E', '#005CA9'], 
 
     series: [{
       name: "Series A (Teal)",
@@ -5887,7 +5887,7 @@ if (document.getElementById('error-chart')) {
           ranges: [
             { from: 0, to: 0, name: 'none', color: '#F1F3F4' },
             { from: 1, to: 50, name: 'low', color: '#FFB38A' },
-            { from: 51, to: 100, name: 'high', color: '#F26522' }
+            { from: 51, to: 100, name: 'high', color: '#005CA9' }
           ]
         }
       }
@@ -5962,7 +5962,7 @@ if (document.getElementById('total-assets')) {
 
     colors: [
       ({ dataPointIndex }) =>
-        dataPointIndex === 23 ? '#F26522' : '#F2F4F7'
+        dataPointIndex === 23 ? '#005CA9' : '#F2F4F7'
     ],
 
     dataLabels: { enabled: false },
@@ -6228,7 +6228,7 @@ if (document.getElementById('asset-value')) {
     colors: [
       ({ seriesIndex, dataPointIndex }) =>
         dataPointIndex < filledBlocks
-          ? '#F26522'
+          ? '#005CA9'
           : '#F2F4F7'
     ],
 
@@ -6332,7 +6332,7 @@ if (document.getElementById('depreciated-value')) {
       name: 'Negative',
       data: [-15, -40, -30, -35, -40, -35, -32]
     }],
-    colors: ['#F26522'], // Your orange color
+    colors: ['#005CA9'], // Your orange color
     grid: { show: false },
     xaxis: { labels: { show: false } },
     yaxis: {
@@ -6428,7 +6428,7 @@ if (document.getElementById('purchase-trend')) {
     stroke: {
       curve: 'stepline',
       width: 2,
-      colors: ['#FF6F28']
+      colors: ['#0C64AD']
     },
 
     fill: {
@@ -6441,12 +6441,12 @@ if (document.getElementById('purchase-trend')) {
         colorStops: [
           {
             offset: 0,
-            color: '#FF6F28',
+            color: '#0C64AD',
             opacity: 0.35
           },
           {
             offset: 100,
-            color: '#FF6F28',
+            color: '#0C64AD',
             opacity: 0.05
           }
         ]
@@ -6521,8 +6521,8 @@ if (document.getElementById('purchase-trend')) {
         {
           x: 'Jun',
           strokeDashArray: 0,
-          borderColor: '#FF6F28',
-          fillColor: '#FF6F28',
+          borderColor: '#0C64AD',
+          fillColor: '#0C64AD',
           opacity: 1,
           width: 30,
           label: {
@@ -6574,7 +6574,7 @@ if (document.getElementById('headcount-chart')) {
         right: 0, // Adds space on the right
       },
     },
-    colors: ['#F26522', '#E5E7EB'],
+    colors: ['#005CA9', '#E5E7EB'],
     chart: {
       type: 'bar',
       height: 240,
@@ -6688,7 +6688,7 @@ if (document.getElementById('finance-chart')) {
           backgroundBarOpacity: 0.5,
           hover: {
             enabled: true,
-            borderColor: '#F26522', // Color when hovering over the bar
+            borderColor: '#005CA9', // Color when hovering over the bar
           }
         }
       },
@@ -6705,7 +6705,7 @@ if (document.getElementById('finance-chart')) {
       offsetY: 10, // Adjust this value to nudge the text up or down from the bottom
       style: {
         fontSize: '12px',
-        colors: ['#F26522'], // Gray color to match your design
+        colors: ['#005CA9'], // Gray color to match your design
         fontWeight: 'bold'
       }
     },
@@ -6759,7 +6759,7 @@ if (document.getElementById('budget-chart')) {
         show: false,
       }
     },
-    colors: ['#F26522', '#0C4B5E'],
+    colors: ['#005CA9', '#0C4B5E'],
     dataLabels: {
       enabled: false
     },
@@ -7264,7 +7264,7 @@ if (document.getElementById('ticket-trends')) {
       { name: 'Created', data: [45, 60, 95, 70, 75, 60, 75] },
       { name: 'Resolved', data: [145, 155, 185, 145, 145, 170, 170] }
     ],
-    colors: ['#F26522', '#0D4C63'], // Exact colors from image
+    colors: ['#005CA9', '#0D4C63'], // Exact colors from image
     stroke: {
       curve: 'straight', // Important: The image does not use smooth curves
       width: 1.5
@@ -7280,7 +7280,7 @@ if (document.getElementById('ticket-trends')) {
     },
     markers: {
       size: 4,
-      colors: ['#F26522', '#0D4C63'],
+      colors: ['#005CA9', '#0D4C63'],
       strokeColors: '#fff',
       strokeWidth: 2,
       hover: { size: 6 }
@@ -7302,7 +7302,7 @@ if (document.getElementById('ticket-trends')) {
         offsetX : 2,
         style: {
           // Highlights "Thu" in orange, others in gray
-          colors: ['#8e94a9', '#8e94a9', '#8e94a9', '#F26522', '#8e94a9', '#8e94a9', '#8e94a9'],
+          colors: ['#8e94a9', '#8e94a9', '#8e94a9', '#005CA9', '#8e94a9', '#8e94a9', '#8e94a9'],
           fontSize: '13px'
         }
       }
@@ -7394,7 +7394,7 @@ if (document.getElementById('ticket-status')) {
     },
 
     colors: [
-      '#F26522',    
+      '#005CA9',    
       '#1B84FF',    
       '#FFC107',   
       '#AB47BC',    
@@ -7427,7 +7427,7 @@ if (document.getElementById('sla-compliance')) {
       sparkline: { enabled: true }
     },
 
-    colors: ['#F26522'],
+    colors: ['#005CA9'],
 
     plotOptions: {
       radialBar: {
@@ -7576,7 +7576,7 @@ document.querySelectorAll('.agent-performance').forEach((el) => {
       data: Array.from({ length: totalDots }, (_, i) => ({
         x: i + 1,
         y: 1,
-        fillColor: i < filledDots ? '#F26522' : '#E5E7EB'
+        fillColor: i < filledDots ? '#005CA9' : '#E5E7EB'
       }))
     }],
     chart: { type: 'scatter', height: 18, sparkline: { enabled: true } },
@@ -7918,7 +7918,7 @@ if (document.getElementById('statistics-chart')) {
             }
         },
 
-        colors: ['#f26522'],
+        colors: ['#005ca9'],
 
         stroke: {
             curve: 'smooth',
@@ -8261,7 +8261,7 @@ if (document.getElementById('pipeline-overview-chart')) {
                 }
             }
         },
-        colors: ['#F26522', '#0C4B5E', '#FFC107', '#03C95A'],
+        colors: ['#005CA9', '#0C4B5E', '#FFC107', '#03C95A'],
 
         dataLabels: {
             enabled: true,
@@ -8360,7 +8360,7 @@ if (document.getElementById('budget-allocation-chart')) {
             }
         },
 
-        colors: ['#FF6F28', '#FEF1EB'],
+        colors: ['#0C64AD', '#E8F0F7'],
 
         responsive: [
             {
@@ -8485,7 +8485,7 @@ if (document.getElementById('role-demand-chart')) {
           width: '100%',
       },
 
-      colors: ['#03C95A', '#AB47BC', '#FFC107', '#1B84FF', '#FF6F28'],
+      colors: ['#03C95A', '#AB47BC', '#FFC107', '#1B84FF', '#0C64AD'],
 
       plotOptions: {
           radialBar: {
@@ -8565,7 +8565,7 @@ if (document.getElementById('performance-chart')) {
     colors: [
       ({ dataPointIndex }) =>
         dataPointIndex < filledBlocks
-          ? '#F26522' // Active Orange  
+          ? '#005CA9' // Active Orange  
           : '#E5E7EB' // Inactive Gray
     ],
 
@@ -8667,7 +8667,7 @@ if (document.getElementById('goals-chart')) {
     // The first color is 'inactive', the 6th color (index 5) is 'active'
     colors: [
       '#E9ECEF', '#E9ECEF', '#E9ECEF', '#E9ECEF', '#E9ECEF',
-      '#F26522', // This is your active orange bar
+      '#005CA9', // This is your active orange bar
       '#E9ECEF', '#E9ECEF', '#E9ECEF', '#E9ECEF', '#E9ECEF'
     ],
     grid: { show: false },
@@ -8706,7 +8706,7 @@ if (document.getElementById('productivity-chart')) {
           }
       },
 
-        colors: ['#f26522'],
+        colors: ['#005ca9'],
 
         stroke: {
             curve: 'straight', // important for screenshot look
@@ -8895,7 +8895,7 @@ if (document.getElementById('performance-productivity-engagement-chart')) {
       }
     ],
 
-    colors: ['#F37438', '#F9B291', '#FCE0D3'],
+    colors: ['#196CB1', '#80AED4', '#CCDEEE'],
 
     plotOptions: {
       bar: {
@@ -9722,7 +9722,7 @@ if (document.getElementById('attendance-statistics')) {
           [
             // Gradient 1: Present (Orange Curve Fill)
             { offset: 0, color: '#F58229', opacity: 0.4 },
-            { offset: 1, color: '#FEF1EB', opacity: 0.9 }
+            { offset: 1, color: '#E8F0F7', opacity: 0.9 }
           ],
           [
             // Gradient 2: Absent (Blue-Grey Curve Fill)
@@ -9986,7 +9986,7 @@ if (document.getElementById('rate-chart')) {
         colors: {
           hover: {
             enabled: true,
-            borderColor: '#F26522', // Color when hovering over the bar
+            borderColor: '#005CA9', // Color when hovering over the bar
           }
         }
       },
@@ -10003,7 +10003,7 @@ if (document.getElementById('rate-chart')) {
       offsetY: 10, // Adjust this value to nudge the text up or down from the bottom
       style: {
         fontSize: '12px',
-        colors: ['#F26522'], // Gray color to match your design
+        colors: ['#005CA9'], // Gray color to match your design
         fontWeight: 'bold'
       }
     },
@@ -10078,7 +10078,7 @@ if (document.getElementById('day-chart')) {
         colors: {
           hover: {
             enabled: true,
-            borderColor: '#F26522', // Color when hovering over the bar
+            borderColor: '#005CA9', // Color when hovering over the bar
           }
         }
       },
@@ -10095,7 +10095,7 @@ if (document.getElementById('day-chart')) {
       offsetY: 10, // Adjust this value to nudge the text up or down from the bottom
       style: {
         fontSize: '12px',
-        colors: ['#F26522'], // Gray color to match your design
+        colors: ['#005CA9'], // Gray color to match your design
         fontWeight: 'bold'
       }
     },
@@ -10334,7 +10334,7 @@ var options = {
               name: 'Budget',
               value: 6000,
               strokeHeight: 4,
-              strokeColor: '#F26522',
+              strokeColor: '#005CA9',
               strokeLineCap: 'round'
             }
           ]
@@ -10347,7 +10347,7 @@ var options = {
               name: 'Budget',
               value: 6000,
               strokeHeight: 4,
-              strokeColor: '#F26522',
+              strokeColor: '#005CA9',
               strokeLineCap: 'round'
             }
           ]
@@ -10360,7 +10360,7 @@ var options = {
               name: 'Budget',
               value: 6000,
               strokeHeight: 4,
-              strokeColor: '#F26522',
+              strokeColor: '#005CA9',
               strokeLineCap: 'round'
             }
           ]
@@ -10373,7 +10373,7 @@ var options = {
               name: 'Budget',
               value: 6000,
               strokeHeight: 4,
-              strokeColor: '#F26522',
+              strokeColor: '#005CA9',
               strokeLineCap: 'round'
             }
           ]
@@ -10386,7 +10386,7 @@ var options = {
               name: 'Budget',
               value: 6000,
               strokeHeight: 4,
-              strokeColor: '#F26522',
+              strokeColor: '#005CA9',
               strokeLineCap: 'round'
             }
           ]
@@ -10399,7 +10399,7 @@ var options = {
               name: 'Budget',
               value: 6000,
               strokeHeight: 4,
-              strokeColor: '#F26522',
+              strokeColor: '#005CA9',
               strokeLineCap: 'round'
             }
           ]
@@ -10543,13 +10543,13 @@ if (document.getElementById('forecast-chart')) {
       }
     },
     colors: [
-      '#F26522', // Mon
-      '#F26522', // Bar 2
-      '#F26522', // Bar 3
-      '#F26522', // Bar 4 (Highlighted Active Orange)
-      '#F26522', // Bar 5
-      '#F26522', // Bar 6
-      '#F26522'  // Bar 7
+      '#005CA9', // Mon
+      '#005CA9', // Bar 2
+      '#005CA9', // Bar 3
+      '#005CA9', // Bar 4 (Highlighted Active Orange)
+      '#005CA9', // Bar 5
+      '#005CA9', // Bar 6
+      '#005CA9'  // Bar 7
     ],
     tooltip: {
       enabled: true

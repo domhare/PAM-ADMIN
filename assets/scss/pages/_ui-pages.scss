@@ -12,7 +12,7 @@
 .flatpickr-current-month {
 	.flatpickr-monthDropdown-months {
 		border-radius: 0.25rem ;
-		border: 1px dashed rgba(242, 101, 34, 0.3) ;
+		border: 1px dashed rgba(0, 92, 169, 0.3) ;
 		&:hover {
 			background: transparent ;
 		}
@@ -38,7 +38,7 @@
 }
 .flatpickr-months,
 .flatpickr-weekdays {
-  background-color: rgba(242, 101, 34, 0.1) ;
+  background-color: rgba(0, 92, 169, 0.1) ;
 }
 .flatpickr-months .flatpickr-prev-month,
 .flatpickr-months .flatpickr-next-month {
@@ -54,7 +54,7 @@
     fill: variables.$primary ;
   }
   span.flatpickr-weekday {
-    color: rgba(242, 101, 34, 0.8) ;
+    color: rgba(0, 92, 169, 0.8) ;
     font-weight: 700 ;
 }
 .flatpickr-day.today {
@@ -138,11 +138,11 @@ ul,ol{
         }
       }
       .list-group-item{
-        background-color:rgba(242, 101, 34, 0.05) ;
+        background-color:rgba(0, 92, 169, 0.05) ;
       }
       .list-group-item+.list-group-item {
         border-top-width: 1px;
-        background-color:rgba(242, 101, 34, 0.05) ;
+        background-color:rgba(0, 92, 169, 0.05) ;
       }
     }
     &#shared-right,&#cloning-right,&#disabling-sorting-right {

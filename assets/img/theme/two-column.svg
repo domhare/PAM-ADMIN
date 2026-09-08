@@ -11,7 +11,7 @@
 <path d="M0.25 11.25H199.75V149.75H0.25V11.25Z" stroke="#E5E7EB" stroke-width="0.5"/>
 <path d="M0.25 11.25H11.75V149.75H5C2.37665 149.75 0.25 147.623 0.25 145V11.25Z" fill="#212529"/>
 <path d="M0.25 11.25H11.75V149.75H5C2.37665 149.75 0.25 147.623 0.25 145V11.25Z" stroke="#E5E7EB" stroke-width="0.5"/>
-<rect x="3" y="13" width="6" height="4" rx="2" fill="#F37438"/>
+<rect x="3" y="13" width="6" height="4" rx="2" fill="#196CB1"/>
 <rect x="5" y="22" width="2" height="5" rx="1" fill="#DCE5E8"/>
 <rect x="5" y="29" width="2" height="4" rx="1" fill="#DCE5E8"/>
 <rect x="5" y="35" width="2" height="5" rx="1" fill="#DCE5E8"/>

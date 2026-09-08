@@ -963,7 +963,7 @@
 				},
 				colors: {
 					Revenue: '#0C4B5E',
-					Expense: '#F26522'
+					Expense: '#005CA9'
 				}
 			},
 		

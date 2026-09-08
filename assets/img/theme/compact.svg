@@ -13,7 +13,7 @@
 <path d="M0 11H13V150H0V11Z"/>
 </mask>
 <path d="M12.5 11V150H13.5V11H12.5Z" fill="#E5E7EB" mask="url(#path-7-inside-2_1078_224)"/>
-<rect x="3.5" y="21" width="6" height="4" rx="2" fill="#F37438"/>
+<rect x="3.5" y="21" width="6" height="4" rx="2" fill="#196CB1"/>
 <rect x="3.5" y="37" width="6" height="3" rx="1.5" fill="#DCE5E8"/>
 <rect x="3.5" y="42" width="6" height="3" rx="1.5" fill="#DCE5E8"/>
 <rect x="3.5" y="47" width="6" height="3" rx="1.5" fill="#DCE5E8"/>

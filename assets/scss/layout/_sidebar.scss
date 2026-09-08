@@ -130,7 +130,7 @@
                             color: #FE9F43;
                         }
                         .menu-arrow{
-                            background: #FFEDDC;
+                            background: #DCE9F3;
                             &::before{
                                 border-color: #FE9F43;
                             }
@@ -427,7 +427,7 @@
         &.subdrop{
             .menu-arrow {
                 transform: translateY(-50%) rotate(90deg);                          
-                background: #FFEDDC;
+                background: #DCE9F3;
             }
         }
     }

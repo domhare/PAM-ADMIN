@@ -760,7 +760,7 @@ document.addEventListener('DOMContentLoaded', function () {
 				datasets: [{
 					label: 'Semi Donut',
 					data: [80, 20],
-					backgroundColor: ['#fff', '#F26522'],
+					backgroundColor: ['#fff', '#005CA9'],
 					borderWidth: 2,
 					borderRadius: 10,
 					borderColor: '#3B7080', 
