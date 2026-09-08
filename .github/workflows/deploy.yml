@@ -1,0 +1,75 @@
+# Laedt die Seite bei jedem Push auf main per SFTP auf den Strato-Webspace.
+#
+# Einmalig einzurichten unter Settings -> Secrets and variables -> Actions:
+#   SFTP_HOST      der SFTP-Server aus dem Strato-Kundenlogin
+#   SFTP_USER      der zugehoerige Benutzername
+#   SFTP_PASSWORD  das Passwort des SFTP-Zugangs
+# Optional als Variable (nicht Secret):
+#   REMOTE_DIR     Zielverzeichnis auf dem Webspace, Standard "/"
+#
+# Ohne diese Secrets tut der Workflow nichts und schlaegt auch nicht fehl.
+
+name: Auf Strato veroeffentlichen
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: strato-deploy
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Zugangsdaten pruefen
+        id: check
+        env:
+          SFTP_HOST: ${{ secrets.SFTP_HOST }}
+        run: |
+          if [ -z "$SFTP_HOST" ]; then
+            echo "Kein SFTP_HOST hinterlegt - Veroeffentlichung wird uebersprungen."
+            echo "ready=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "ready=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Werkzeuge installieren
+        if: steps.check.outputs.ready == 'true'
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq lftp sshpass
+
+      - name: Dateien hochladen
+        if: steps.check.outputs.ready == 'true'
+        env:
+          SSHPASS: ${{ secrets.SFTP_PASSWORD }}
+          SFTP_HOST: ${{ secrets.SFTP_HOST }}
+          SFTP_USER: ${{ secrets.SFTP_USER }}
+          REMOTE_DIR: ${{ vars.REMOTE_DIR || '/' }}
+        run: |
+          set -euo pipefail
+
+          # Bewusst ohne --delete: api/config.php liegt nur auf dem Server und
+          # enthaelt die Zugangsdaten zum Postfach. Ein Spiegeln mit Loeschen
+          # wuerde sie bei jedem Deploy entfernen.
+          lftp -c "
+            set sftp:auto-confirm yes;
+            set sftp:connect-program 'sshpass -e ssh -a -x -o StrictHostKeyChecking=accept-new';
+            set net:max-retries 3;
+            set net:timeout 20;
+            open -u \"$SFTP_USER\",dummy sftp://$SFTP_HOST;
+            mkdir -f -p \"$REMOTE_DIR\";
+            mirror -R --verbose --parallel=4 \
+              --exclude-glob .git/ \
+              --exclude-glob .github/ \
+              --exclude-glob node_modules/ \
+              --exclude-glob api/config.php \
+              ./ \"$REMOTE_DIR\";
+          "
+
+      - name: Ergebnis
+        if: steps.check.outputs.ready == 'true'
+        run: echo "Veroeffentlichung abgeschlossen."

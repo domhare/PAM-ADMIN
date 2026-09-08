@@ -53,15 +53,24 @@ den Beispieldaten und zeigt einen Hinweis.
 
 ### Einrichten
 
-1. Alle Dateien per FTP auf den Strato-Webspace laden (inklusive `api/`).
-2. `api/config.example.php` nach `api/config.php` kopieren und ausfüllen:
-   Postfach-Passwort bei `imap.password` und `smtp.password`.
-3. Panel-Passwort festlegen: `api/hash.php` im Browser aufrufen, Wunschpasswort
-   eingeben, den Hash nach `panel_password_hash` in `api/config.php` eintragen –
-   danach `api/hash.php` löschen.
-4. `email.html` aufrufen, mit dem Panel-Passwort anmelden.
-5. Bei Problemen `api/diagnose.php` aufrufen: der Selbsttest prüft PHP-Version,
-   Erreichbarkeit der Strato-Server, Anmeldung und Ordnerzuordnung.
+1. **Dateien auf den Webspace bringen.** Entweder einmalig per FTP-Programm
+   (FileZilla, WinSCP) hochladen – oder den Workflow `.github/workflows/deploy.yml`
+   aktivieren, dann geschieht das bei jedem Push auf `main` automatisch.
+   Dafür unter *Settings → Secrets and variables → Actions* anlegen:
+   `SFTP_HOST`, `SFTP_USER`, `SFTP_PASSWORD` (optional die Variable `REMOTE_DIR`).
+2. **`api/setup.php` im Browser aufrufen.** Die Seite prüft die Umgebung, testet
+   die Zugangsdaten direkt gegen Strato, ermittelt die Ports selbst und legt
+   `api/config.php` an. Dort werden die Adresse des Postfachs, dessen Passwort
+   und ein frei wählbares Panel-Passwort eingegeben.
+3. **Auf „Einrichtung abschließen" klicken.** Damit löschen sich `setup.php` und
+   `hash.php` selbst, sonst könnte jemand die Konfiguration überschreiben.
+4. `email.html` aufrufen und mit dem Panel-Passwort anmelden.
+
+Läuft etwas nicht, zeigt `api/diagnose.php` (nach Anmeldung) PHP-Version,
+Erreichbarkeit der Strato-Server, Anmeldung und Ordnerzuordnung an.
+
+Zum Ändern der Zugangsdaten: `api/config.php` per FTP löschen, `setup.php`
+erneut hochladen und aufrufen.
 
 ### Zugangsdaten
 

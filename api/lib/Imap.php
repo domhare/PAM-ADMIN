@@ -26,7 +26,13 @@ final class Imap
 
         $errno = 0;
         $errstr = '';
-        $sock = @stream_socket_client(
+        $warnings = [];
+        set_error_handler(static function (int $number, string $message) use (&$warnings): bool {
+            $warnings[] = $message;
+
+            return true;
+        });
+        $sock = stream_socket_client(
             $transport . $host . ':' . $port,
             $errno,
             $errstr,
@@ -34,8 +40,15 @@ final class Imap
             STREAM_CLIENT_CONNECT,
             $context
         );
+        restore_error_handler();
+
         if ($sock === false) {
-            throw new ImapException(sprintf('Verbindung zu %s:%d fehlgeschlagen: %s', $host, $port, $errstr ?: 'unbekannt'));
+            throw new ImapException(sprintf(
+                'Verbindung zu %s:%d fehlgeschlagen: %s',
+                $host,
+                $port,
+                self::connectionError($errstr, $warnings)
+            ));
         }
         $this->sock = $sock;
         stream_set_timeout($this->sock, (int) $timeout);
@@ -359,4 +372,31 @@ final class Imap
 
         return mb_convert_encoding($name, 'UTF-8', 'UTF7-IMAP');
     }
+
+    /**
+     * Der Grund eines fehlgeschlagenen Verbindungsaufbaus. Bei TLS-Problemen
+     * steht die eigentliche Ursache (abgelaufenes Zertifikat, falscher
+     * Hostname) nur in der unterdrueckten PHP-Warnung.
+     */
+    private static function connectionError(string $errstr, array $warnings): string
+    {
+        $details = [];
+        foreach ($warnings as $warning) {
+            $warning = preg_replace('/^stream_socket_client\(\):\s*/', '', trim($warning)) ?? $warning;
+            // Die generische Abschlusswarnung sagt nichts ueber die Ursache.
+            if ($warning === '' || str_starts_with($warning, 'Unable to connect to')) {
+                continue;
+            }
+            $details[] = $warning;
+        }
+
+        if ($details === []) {
+            return $errstr !== '' ? $errstr : 'unbekannter Fehler';
+        }
+
+        $detail = implode('; ', array_unique($details));
+
+        return $errstr !== '' ? $errstr . ' (' . $detail . ')' : $detail;
+    }
+
 }
