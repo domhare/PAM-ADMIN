@@ -9,4 +9,8 @@
     </IfModule>
 </FilesMatch>
 
-RedirectMatch 404 ^/.*/api/lib/.*$
+# Frueher stand hier "^/.*/api/lib/.*$". Das Muster verlangt einen Pfadteil
+# vor /api/ und traf deshalb genau dann nicht zu, wenn das Panel im
+# Wurzelverzeichnis liegt - also im Regelfall. Ohne Anker passt es unabhaengig
+# davon, wo die Seite installiert ist.
+RedirectMatch 404 /api/lib/

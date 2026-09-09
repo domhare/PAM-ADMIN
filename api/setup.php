@@ -10,12 +10,30 @@ declare(strict_types=1);
  * Ende selbst loeschen.
  */
 
+header('Content-Type: text/html; charset=utf-8');
+header('X-Robots-Tag: noindex, nofollow');
+
+/*
+ * lib/ braucht PHP 8.1. Wuerde es hier ungeprueft eingebunden, saehe man auf
+ * einer aelteren Version nur eine weisse Seite mit HTTP 500 - ausgerechnet
+ * auf der Seite, die beim Einrichten helfen soll. Also erst pruefen.
+ */
+if (PHP_VERSION_ID < 80100) {
+    echo '<!doctype html><meta charset="utf-8"><title>PHP-Version zu alt</title>'
+        . '<div style="font:15px/1.6 system-ui,sans-serif;max-width:40rem;margin:3rem auto;padding:0 1rem">'
+        . '<h1 style="font-size:1.4rem">PHP-Version zu alt</h1>'
+        . '<p>Dieser Webspace laeuft mit <strong>PHP ' . htmlspecialchars(PHP_VERSION, ENT_QUOTES) . '</strong>. '
+        . 'Die Mail-Anbindung braucht mindestens <strong>PHP 8.1</strong>.</p>'
+        . '<p>Umzustellen im Strato-Kundenlogin unter <em>Paket verwalten &rarr; PHP-Version</em>. '
+        . 'Danach diese Seite neu laden.</p>'
+        . '<p><a href="check.php">Vollstaendige Pruefung der Umgebung</a></p></div>';
+    exit;
+}
+
 require_once __DIR__ . '/lib/Imap.php';
 require_once __DIR__ . '/lib/Smtp.php';
 
 mb_internal_encoding('UTF-8');
-header('Content-Type: text/html; charset=utf-8');
-header('X-Robots-Tag: noindex, nofollow');
 
 const CONFIG_PATH = __DIR__ . '/config.php';
 

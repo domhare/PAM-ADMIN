@@ -23,13 +23,17 @@ try {
     $imap->select($folder, true);
 
     $criteria = $isStarred ? 'FLAGGED' : 'ALL';
+    $terms = [];
     if ($search !== '') {
-        // Wird als IMAP-Literal uebergeben, damit Umlaute und Leerzeichen sicher sind.
-        $quoted = '"' . str_replace(['\\', '"'], ['\\\\', '\\"'], $search) . '"';
-        $criteria = ($isStarred ? 'FLAGGED ' : '') . 'OR OR SUBJECT ' . $quoted . ' FROM ' . $quoted . ' TEXT ' . $quoted;
+        // Der Begriff geht als Literal raus, nicht in Anfuehrungszeichen -
+        // sonst scheitert die Suche an Umlauten. CHARSET gehoert dabei laut
+        // RFC 3501 vor alle uebrigen Suchkriterien.
+        $criteria = 'CHARSET UTF-8 ' . ($isStarred ? 'FLAGGED ' : '')
+            . 'OR OR SUBJECT %s FROM %s TEXT %s';
+        $terms = [$search, $search, $search];
     }
 
-    $uids = $imap->search($criteria);
+    $uids = $imap->search($criteria, $terms);
     $total = count($uids);
 
     // Neueste zuerst.

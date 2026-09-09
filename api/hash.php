@@ -7,6 +7,20 @@ declare(strict_types=1);
  */
 
 header('Content-Type: text/html; charset=utf-8');
+header('X-Robots-Tag: noindex, nofollow');
+
+// Der Deploy spiegelt das Repository und laedt diese Datei nach dem
+// Einrichten wieder hoch. Steht die Konfiguration, wird sie nicht mehr
+// gebraucht - dann lieber gar nichts anbieten.
+if (is_file(__DIR__ . '/config.php')) {
+    http_response_code(404);
+    echo '<!doctype html><meta charset="utf-8"><title>Nicht mehr noetig</title>'
+        . '<p style="font:15px/1.6 system-ui,sans-serif;margin:3rem auto;max-width:32rem">'
+        . 'Die Einrichtung ist abgeschlossen; diese Seite wird nicht mehr gebraucht '
+        . 'und kann per FTP geloescht werden.</p>';
+    exit;
+}
+
 $password = $_POST['password'] ?? '';
 $hash = $password !== '' ? password_hash($password, PASSWORD_DEFAULT) : '';
 ?>

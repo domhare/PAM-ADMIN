@@ -54,10 +54,14 @@
 				}
 			})
 			.catch(function (error) {
+				// Ohne konkreten Anschluss endet der Nutzer hier in einer Sackgasse:
+				// api/check.php sagt auf jeder PHP-Version, woran es liegt.
 				showBanner(
 					'Kein Mail-Backend erreichbar - die Seite zeigt Beispieldaten. ' +
-					'Für echte Mails müssen die Dateien auf dem Strato-Webspace liegen (PHP). (' + error.message + ')',
-					'warning'
+					'Für echte Mails müssen die Dateien auf dem Strato-Webspace liegen (PHP). ' +
+					'(' + error.message + ')',
+					'warning',
+					{ href: API + 'check.php', text: 'Umgebung prüfen' }
 				);
 			});
 	}
@@ -572,7 +576,7 @@
 		});
 	}
 
-	function showBanner(text, tone) {
+	function showBanner(text, tone, link) {
 		var existing = document.getElementById('mail-banner');
 		if (existing) {
 			existing.remove();
@@ -580,7 +584,17 @@
 		var banner = document.createElement('div');
 		banner.id = 'mail-banner';
 		banner.className = 'alert alert-' + (tone || 'warning') + ' rounded-0 mb-0 py-2 fs-13';
-		banner.textContent = text;
+		banner.appendChild(document.createTextNode(text));
+
+		if (link) {
+			banner.appendChild(document.createTextNode(' '));
+			var anchor = document.createElement('a');
+			anchor.href = link.href;
+			anchor.textContent = link.text;
+			anchor.className = 'alert-link';
+			banner.appendChild(anchor);
+		}
+
 		var wrapper = document.querySelector('.page-wrapper .content');
 		if (wrapper) {
 			wrapper.insertBefore(banner, wrapper.firstChild);

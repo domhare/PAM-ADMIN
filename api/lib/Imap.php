@@ -16,6 +16,7 @@ final class Imap
     private $sock;
     private int $tag = 0;
     private ?string $selected = null;
+    private bool $selectedReadOnly = true;
 
     public function __construct(string $host, int $port, string $encrypt = 'ssl', float $timeout = 20.0)
     {
@@ -118,22 +119,34 @@ final class Imap
 
     public function select(string $folder, bool $readOnly = false): void
     {
-        if ($this->selected === $folder) {
+        // Ein mit EXAMINE geoeffneter Ordner ist nur lesbar. Wird darin danach
+        // doch geschrieben - Flags setzen, loeschen -, muss er neu mit SELECT
+        // geoeffnet werden, sonst weist der Server die Aenderung ab.
+        if ($this->selected === $folder && (!$this->selectedReadOnly || $readOnly)) {
             return;
         }
         $verb = $readOnly ? 'EXAMINE' : 'SELECT';
         $this->command($verb . ' ' . self::quote(self::toUtf7($folder)));
         $this->selected = $folder;
+        $this->selectedReadOnly = $readOnly;
     }
 
     /**
      * UIDs im aktuell gewaehlten Ordner, aelteste zuerst.
      *
+     * Suchbegriffe gehoeren nicht in $criteria, sondern als %s-Platzhalter
+     * hinein und in $terms daneben: In Anfuehrungszeichen darf laut RFC 3501
+     * nur 7-Bit-Text stehen, ein "Grüße" oder "TÜV" wuerde also je nach Server
+     * abgelehnt. Als Literal mit vorangestelltem CHARSET UTF-8 ist es sauber.
+     *
+     * @param  list<string> $terms
      * @return list<int>
      */
-    public function search(string $criteria = 'ALL'): array
+    public function search(string $criteria = 'ALL', array $terms = []): array
     {
-        $response = $this->command('UID SEARCH ' . $criteria);
+        $response = $terms === []
+            ? $this->command('UID SEARCH ' . $criteria)
+            : $this->commandWithLiterals('UID SEARCH ' . $criteria, $terms);
         $uids = [];
         foreach ($response as $line) {
             if (preg_match('/^\* SEARCH(.*)$/', $line['text'], $m) === 1) {
@@ -250,6 +263,35 @@ final class Imap
     {
         $tag = 'a' . ++$this->tag;
         $this->write($tag . ' ' . $command . "\r\n");
+
+        return $this->readUntilTagged($tag, $command);
+    }
+
+    /**
+     * Kommando, in dem jedes %s durch ein Literal ersetzt wird. Der Server
+     * bestaetigt jedes Literal einzeln mit "+", bevor die Bytes folgen.
+     *
+     * @param  list<string> $literals
+     * @return list<array{text: string, literals: list<string>}>
+     */
+    private function commandWithLiterals(string $command, array $literals): array
+    {
+        $parts = explode('%s', $command);
+        if (count($parts) !== count($literals) + 1) {
+            throw new ImapException('Kommando und Platzhalter passen nicht zusammen.');
+        }
+
+        $tag = 'a' . ++$this->tag;
+        $line = $tag . ' ';
+        foreach ($literals as $index => $literal) {
+            $this->write($line . $parts[$index] . '{' . strlen($literal) . "}\r\n");
+            $continuation = $this->readLine();
+            if (!str_starts_with($continuation['text'], '+')) {
+                throw new ImapException('Server hat das Literal abgelehnt: ' . $continuation['text']);
+            }
+            $line = $literal;
+        }
+        $this->write($line . $parts[count($literals)] . "\r\n");
 
         return $this->readUntilTagged($tag, $command);
     }
